@@ -1,0 +1,26 @@
+<mat-card class>
+    <h1 class="mt-5 text-center">Add Category</h1>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form class="row" [formGroup]="addcategoryform">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Enter Your Title" formControlName="title" >
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput rows="10" placeholder="Enter Category Description" formControlName="description"></textarea>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button class="btn btn-primary mb-3"[disabled]="addcategoryform.invalid" (click)="addcategory()">Add Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>

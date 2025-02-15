@@ -1,0 +1,52 @@
+<mat-card >
+    <h1 class="mt-5 text-center"> Add New Question</h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <form class="row" [formGroup]="addQuestioForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter Question</mat-label>
+                        <input matInput placeholder="Enter Question" formControlName="content" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-md-6">
+                        <mat-label>Option A:</mat-label>
+                        <input matInput placeholder="Enter Option A" name="option1"  formControlName="option1" [(ngModel)]="addQuestions.option1" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-md-6">
+                        <mat-label>Option B:</mat-label>
+                        <input matInput placeholder="Enter Option B" name="option2"  formControlName="option2" [(ngModel)]="addQuestions.option2" required>
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline" class="col-md-6">
+                        <mat-label>Option C:</mat-label>
+                        <input matInput placeholder="Enter Option C" name="option3"  formControlName="option3" [(ngModel)]="addQuestions.option3" required>
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline" class="col-md-6">
+                        <mat-label>Option D:</mat-label>
+                        <input matInput placeholder="Enter Option D" name="option4" formControlName="option4" [(ngModel)]="addQuestions.option4" required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Choose Your Correct Answer</mat-label>
+                        <mat-select name="answer" formControlName="answer">
+                            <mat-option *ngIf="addQuestions.option1" [value]="addQuestions.option1" >{{addQuestions.option1}} </mat-option>
+                            <mat-option *ngIf="addQuestions.option2" [value]="addQuestions.option2">{{addQuestions.option2}}</mat-option>
+                            <mat-option *ngIf="addQuestions.option3" [value]="addQuestions.option3">{{addQuestions.option3}}</mat-option>
+                            <mat-option *ngIf="addQuestions.option4" [value]="addQuestions.option4">{{addQuestions.option4}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    
+                    <div class="container text-center">
+                        <button class="btn btn-primary mb-3" (click)="AddQuestionData()" [disabled]="addQuestioForm.invalid">Add Question</button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>

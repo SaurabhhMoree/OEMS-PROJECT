@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-action-list class="p-5">
+       <button mat-list-item  class="mt-4" routerLink="/admin-dash"><mat-icon class="text-dark" matListItemIcon>home</mat-icon>Home</button>
+
+       <!-- <button mat-list-item class="mt-4" routerLink="/admin-dash/admin-profie" ><mat-icon  class="text-dark " matListItemIcon>account_circle</mat-icon>Profile</button> -->
+
+       <button mat-list-item  class="mt-4" routerLink="/admin-dash/all-cat"><mat-icon class="text-dark" matListItemIcon>category</mat-icon>Catergory</button>
+
+       <button mat-list-item  class="mt-4" routerLink="/admin-dash/add-cat" ><mat-icon class="text-dark" matListItemIcon>add_circle_outline</mat-icon>Add Catergory</button>
+
+       <button mat-list-item  class="mt-4" routerLink="/admin-dash/all-quiz"><mat-icon class="text-dark" matListItemIcon>quizzes</mat-icon>Quiz</button>
+
+       <button mat-list-item  class="mt-4" routerLink="/admin-dash/add-quiz"><mat-icon class="text-dark" matListItemIcon>add</mat-icon>Add Quiz</button>
+
+       <button mat-list-item class="mt-4" (click)="logout()"><mat-icon class="text-dark" matListItemIcon>logout</mat-icon>Logout</button>
+
+
+    </mat-action-list>
+</mat-card>

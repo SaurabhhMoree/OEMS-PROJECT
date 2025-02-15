@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <mat-card-title>
+                    <h2 class="mt-5 text-center">Read The All Instructions CareFully</h2>
+                </mat-card-title>
+
+                <hr>
+
+                <mat-card-content>
+                    <h1>{{quizes.title}}</h1>
+
+            
+                    <p>{{quizes.description}}</p>
+
+                    <hr>    
+
+                    <h2> Important Instruction </h2>
+
+                    <ul>
+                        <li>This Quiz Is Only For Exam Purpose</li>
+                        <li>Read Questions Carefully all the Questions and give answer</li>
+                        <li>You have submit ur Quiz Within 20 min</li>
+                        <li>You can attempt the quiz any number of time</li>
+                        <li>There are <b>{{quizes.numberOfQuestions}} Questions</b></li>
+                        <li>Each Question Carries <b>{{quizes.maxMarks/quizes.numberOfQuestions}} Marks </b>No negative marking for wrong ans</li>
+                        <li>Alll Question is of MCQ types</li>
+                    </ul>
+
+
+                    <h2>
+                        Attempting Quiz
+                    </h2>
+
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                    </ul>
+                </mat-card-content>
+<hr >
+                <div class="container text-center mb-3 mt-2">
+                    <button class="btn btn-primary" (click)="startexam()">Start Exam</button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

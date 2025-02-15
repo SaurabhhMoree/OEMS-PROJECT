@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6 m-5">
+
+            <form class="row" [formGroup]="loginform">
+                <div class="container text-center">
+                    <img src="assets\image\login.png" style="width: 300px;">
+                    <h2>You Can Sign In Here</h2>
+                </div>
+                
+                    <mat-form-field apperence="outline">
+                        <mat-label> Enter Username</mat-label>
+                        <input type="text" matInput name="username" placeholder="Enter Username"
+                            formControlName="username" required>
+                    </mat-form-field>
+
+                    
+                    <mat-form-field apperence="outline">
+                        <mat-label> Enter Password</mat-label>
+                        <input type="password" matInput name="password" placeholder="Enter Password"
+                            formControlName="password" required>
+                    </mat-form-field>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 d-grid">
+                            <button class="btn btn-primary" (click)="SubmitLoginData()">Login Here</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

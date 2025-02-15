@@ -1,0 +1,44 @@
+
+.img-hero{
+  text-align: center;
+}
+
+.img-hero img{
+  width: 100px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+.welcome {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  
+  .welcome h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+
+
+  }
+  
+  .welcome p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .welcome button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  
+  

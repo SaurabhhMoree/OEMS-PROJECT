@@ -1,0 +1,11 @@
+.main-btn a {
+  color: Black;
+  text-decoration: none;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.main-btn a:hover{
+  color: rgb(13, 126, 239);
+}

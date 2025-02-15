@@ -1,0 +1,29 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img style="width: 55px;" src="assets/image/exam (1).png" ></a>
+    <div class="main-btn d-flex" role="search">
+      <a *ngIf="!isLoggedIn" class="example-icon favorite-icon mb-3"
+            aria-label="Example icon-button with heart icon">
+            <a routerLink="login">Login</a>
+          </a>
+
+
+          <a *ngIf="!isLoggedIn" class="examplpppe-icon mx-5 mb-3"> <a routerLink="signup">Sign
+              Up</a>
+          </a>
+
+
+
+          <!-- -----------------------------ADMIN DASHBOARD-------------------------------------- -->
+
+          <a *ngIf="isLoggedIn && User" class="example-icon favorite-icon mb-3"
+            aria-label="Example icon-button with heart icon">
+            <a>{{"Hi,"+ User.username}}</a>
+          </a>
+
+
+          <a *ngIf="isLoggedIn" class="example-icon mx-5 mb-3"> <a (click)="logout()">Sign Out</a>
+          </a>
+    </div>
+  </div>
+</nav>

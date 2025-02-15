@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-content>
+        <div class="container text-center mt-5">
+            <img src="assets/image/user.png" style="width: 150px;">
+            <h2 class="mt-3">{{userData.firstname | uppercase }}  {{userData.lastname | uppercase}}</h2>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <table class="table table-bordered text-center mt-3" >
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <td>{{userData.firstname}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Id</th>
+                                <td>{{userData.id}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Role</th>
+                                <td>{{userData.authorities[0].authority}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Status</th>
+                                <td>{{userData.enabled}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Phone No</th>
+                                <td>{{userData.phone}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center mt-3">
+            <button mat-raised-button color="primary">Update</button>
+            <button mat-raised-button color="warn" class="mx-5">share</button>
+        </div>
+    </mat-card-content>
+</mat-card> 

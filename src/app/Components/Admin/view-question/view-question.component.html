@@ -1,0 +1,45 @@
+<mat-card class="mb-3">
+<h1 class="text-center mt-5"> QUETIONS {{quizTitle | uppercase}}</h1>
+</mat-card>
+
+<mat-card *ngFor="let quiz of getAllQuestion ; let i = index " class="mb-3">
+
+
+
+    <div class="container mt-4">
+        <p> <b>{{i+1}}</b> <span>{{quiz.content}}</span></p>
+        <div class="row p-3">
+
+            <div class="col-md-6">
+                <p><b>A.</b> <span>{{quiz.option1}}</span></p>
+            </div>
+
+            <div class="col-md-6">
+                <p><b>B.</b> <span>{{quiz.option2}}</span></p>
+            </div>
+
+            <div class="col-md-6">
+                <p><b>C.</b> <span>{{quiz.option3}}</span></p>
+            </div>
+
+            <div class="col-md-6">
+                <p><b>D.</b> <span>{{quiz.option4}}</span></p>
+            </div>
+        </div>
+
+        <mat-divider class="mt-2"></mat-divider>
+            <p class="mt-3"><b>Correct ans:</b> <span>{{quiz.answer}}</span></p>
+        
+    </div>
+
+    <div class="container mb-3 mt-2">
+        <button class="btn btn-primary mx-2" [routerLink]="['/admin-dash/update-question/'+ quiz.question_id] + '/' +quiz.quiz.title">Update</button>
+        <button class="btn btn-danger mx-2" (click)="DeleteQuestionById(quiz.question_id)">Delete</button>
+
+    </div>
+</mat-card>
+
+<div class="container text-center mt-3">
+        <button class="btn btn-success mx-2" [routerLink]="['/admin-dash/add-question/' + quizId + '/'+ quizTitle]">Add Question</button>
+
+    </div>

@@ -1,0 +1,37 @@
+
+<mat-card class="mb-3">
+    <h1 class="text-center mt-3">All Quizes</h1>
+</mat-card>
+<div class="container-fluid">
+    <div class="row" *ngIf="quizzes">
+        <div class="col-md-6" *ngFor="let userquiz of quizzes">
+            <mat-card class="mb-3">
+            
+                <mat-card-header class="mt-3">
+                    <div mat-card-avatar class="quizicon"></div>
+                    <mat-card-title>{{userquiz.title}}</mat-card-title>
+                    <mat-card-subtitle>{{userquiz.description}}</mat-card-subtitle>
+                </mat-card-header>
+             
+                <mat-card-content>
+                    Add Questions From here
+                </mat-card-content>
+            
+                <div class="container">
+                    <button mat-stroked-button class="mx-2 mb-3 mt-3" color="primary">View</button>
+                    <button mat-stroked-button class="mx-2 mb-3 mt-3" color="primary" [routerLink]="['/user-dash/instructions/' +userquiz.quiz_id]" >Start</button>
+                    <button mat-stroked-button class="mx-2 mb-3 mt-3" color="primary">No Of Questions: {{userquiz.numberOfQuestions}}</button>
+                    <button mat-stroked-button class="mx-2 mb-3 mt-3" color="primary">No Of Marks: {{userquiz.maxMarks}}</button>
+            
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-md-12" *ngIf="quizzes.length == 0">
+            <mat-card>
+                <mat-card-content>
+                    <h1>Quiz Is Not Avaliable For This category</h1>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
