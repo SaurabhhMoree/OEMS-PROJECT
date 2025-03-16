@@ -1,95 +1,71 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-3">
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <mat-card>
-                <form class="row" [formGroup]="signupform">
+        <div class="col-lg-5 col-md-7 col-sm-10 col-12">
+            <mat-card class="p-5 shadow">
+                <form class="row g-3" [formGroup]="signupform">
                     <div class="container text-center">
-                        <img src="assets/image/signup.png" class="w-50">
-                        <h2>Register Here..</h2>
+                        <img src="assets/image/signup.png" class="w-50 img-fluid mt-5">
+                        <h2>Register Here</h2>
                     </div>
-                    <div class="name">
-                        <div class="row mx-5">
-                            <div class="col-md-6">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Enter Your FirstName</mat-label>
-                                    <input type="text" matInput placeholder="Your Name" formControlName="firstname"
-                                        name="firstname">
-                                </mat-form-field>
 
-                            </div>
-
-                            <div class="col-md-6">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Enter Your last name</mat-label>
-                                    <input type="text" matInput placeholder="Enter last Name" formControlName="lastname"
-                                        name="lastname">
-                                </mat-form-field>
-                            </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Enter Your First Name</mat-label>
+                                <input type="text" matInput placeholder="Your Name" formControlName="firstname"
+                                    name="firstname">
+                            </mat-form-field>
                         </div>
-                    </div>
-                    <div class="userpass">
-                        <div class="row mx-5">
-                            <div class="col-md-6">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Enter Your Username</mat-label>
-                                    <input type="text" matInput placeholder="Your Name" formControlName="username"
-                                        name="username">
-                                </mat-form-field>
-                            </div>
 
-                            <div class="col-md-6">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Enter Your Password</mat-label>
-                                    <input type="password" matInput placeholder="Your Password"
-                                        formControlName="password" name="password">
-                                </mat-form-field>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <!-- <div class="row">
-                        <div class="col-md-12">
-                            <mat-form-field appearance="outline" >
-                                <mat-label>Enter Your Email</mat-label>
-                                <input type="email" matInput placeholder="Your Email" formControlName="email" name="email">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Enter Your Last Name</mat-label>
+                                <input type="text" matInput placeholder="Your Last Name" formControlName="lastname"
+                                    name="lastname">
                             </mat-form-field>
                         </div>
                     </div>
 
-                        -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Enter Your Username</mat-label>
+                                <input type="text" matInput placeholder="Your Username" formControlName="username"
+                                    name="username">
+                            </mat-form-field>
+                        </div>
 
-                    <div class="email-num">
-                        <div class="row mx-5">
-                            <div class="col-md-6">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Enter Your Email</mat-label>
-                                    <input type="email" matInput placeholder="Your Email" formControlName="email"
-                                        name="email">
-                                </mat-form-field>
-                            </div>
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Enter Your Password</mat-label>
+                                <input type="password" matInput placeholder="Your Password" formControlName="password"
+                                    name="password">
+                            </mat-form-field>
+                        </div>
+                    </div>
 
-                            <div class="col-md-6">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Enter Your Phone</mat-label>
-                                    <input type="number" matInput placeholder="Your Number" formControlName="phone"
-                                        name="phone">
-                                </mat-form-field>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Enter Your Email</mat-label>
+                                <input type="email" matInput placeholder="Your Email" formControlName="email"
+                                    name="email">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Enter Your Phone</mat-label>
+                                <input type="number" matInput placeholder="Your Number" formControlName="phone"
+                                    name="phone">
+                            </mat-form-field>
                         </div>
                     </div>
                 </form>
 
-                <div class="main-btn">
-                    <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 d-grid">
-                            <button class="btn btn-primary" (click)="Signup()">Login Here</button>
-                        </div>
-                    </div>
+                <div class="container-fluid text-center mt-3">
+                    <button class="btn btn-primary w-100" (click)="Signup()">Sign Up</button>
                 </div>
-            </div>
             </mat-card>
         </div>
     </div>

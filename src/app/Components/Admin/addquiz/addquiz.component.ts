@@ -1,5 +1,5 @@
-import { Component , OnInit} from '@angular/core';
-import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/Services/Category-service/category.service';
 import { QuizService } from 'src/app/Services/Quiz-Service/quiz.service';
@@ -12,39 +12,49 @@ import Swal from 'sweetalert2';
 })
 export class AddquizComponent implements OnInit {
 
-  constructor(private quizservice:QuizService , private categoryservice:CategoryService, private router:Router){}
+  constructor(private quizservice: QuizService,
+    private categoryservice: CategoryService,
+    private router: Router,
+  private fb : FormBuilder) { }
   
+
   addquizform: FormGroup = new FormGroup({
-
     title: new FormControl(null, Validators.required),
-    description:new FormControl(null,Validators.required),
-    maxMarks:new FormControl(null,Validators.required),
-    numberOfQuestions:new FormControl(null,Validators.required),
-    active:new FormControl(null,Validators.required),
-    category_id:new FormControl(null,Validators.required),
+    description: new FormControl(null, Validators.required),
+    maxMarks: new FormControl(null, [
+        Validators.required, 
+        Validators.pattern("^[0-9]*$"), 
+        Validators.min(1)
+    ]),
+    numberOfQuestions: new FormControl(null, [
+        Validators.required, 
+        Validators.pattern("^[0-9]*$"), 
+        Validators.min(1)
+    ]),
+    active: new FormControl(false, Validators.required), // Default value false
+    category_id: new FormControl(null, Validators.required),
+});
 
 
-  })
-
-  getcategoryData:any;
+  getcategoryData: any;
 
   ngOnInit(): void {
-     this.categoryservice.getAllCategory().subscribe(
-      (res:any) =>{
+    this.categoryservice.getAllCategory().subscribe(
+      (res: any) => {
         console.log(res);
         this.getcategoryData = res;
       }
-     )
+    )
   }
 
 
-  addQuiz(){
+  addQuiz() {
 
-    if(this.addquizform.invalid){
+    if (this.addquizform.invalid) {
       Swal.fire({
-        title:'Error',
-        text:'All fields are required. Please fill out all fields',
-        icon:'error'
+        title: 'Error',
+        text: 'All fields are required. Please fill out all fields',
+        icon: 'error'
       })
     }
 
@@ -54,18 +64,18 @@ export class AddquizComponent implements OnInit {
       "title": this.addquizform.value.title,
       "description": this.addquizform.value.description,
       "maxMarks": this.addquizform.value.maxMarks,
-      "numberOfQuestions":this.addquizform.value.numberOfQuestions,
+      "numberOfQuestions": this.addquizform.value.numberOfQuestions,
       "active": this.addquizform.value.active,
-      "category" : {"category_id" : this.addquizform.value.category_id}
+      "category": { "category_id": this.addquizform.value.category_id }
     }
 
     this.quizservice.addQuizes(addQuizesData).subscribe(
-      (res:any) => {
+      (res: any) => {
         console.log(res);
         Swal.fire({
           title: `${res.title}`,
-          text:'Quiz Added',
-          icon:'success'
+          text: 'Quiz Added',
+          icon: 'success'
         })
         this.router.navigate(['admin-dash/all-quiz'])
       }
@@ -73,5 +83,5 @@ export class AddquizComponent implements OnInit {
 
   }
 }
-  
+
 
