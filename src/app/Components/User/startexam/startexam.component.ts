@@ -92,24 +92,39 @@ export class StartexamComponent implements OnInit {
     this.directSubmit();
   }
   directSubmit() {
-  
     this.questionservice.directSubmit(this.questions).subscribe(
       (res: any) => {
-        console.log(res);
+        console.log('✅ Response from backend:', res);
         this.isSubmit = true;
         this.attempted = res.attempted;
         this.correctAnswers = res.correctAnswers;
-        this.marksGot = res.marksGot;
-        this.marksGot=parseFloat(Number(res.marksGot).toFixed(2));
-
-
+        this.marksGot = parseFloat(Number(res.marksGot).toFixed(2));
+      },
+      (error) => {
+        console.warn('⚠️ Backend failed. Falling back to frontend logic.');
   
-        // this.router.navigate(['/result'])
-        
-
+        // Fallback logic for frontend-based result calculation
+        let correct = 0;
+        let attempted = 0;
+        let marksPerQuestion = 1;
+  
+        this.questions.forEach((q: any) => {
+          if (q.givenAnswer) {
+            attempted++;
+            if (q.givenAnswer === q.answer) {
+              correct++;
+            }
+          }
+        });
+  
+        this.correctAnswers = correct;
+        this.attempted = attempted;
+        this.marksGot = parseFloat((correct * marksPerQuestion).toFixed(2));
+        this.isSubmit = true;
       }
-    )
+    );
   }
+  
 
   printReslut(){
     window.print()

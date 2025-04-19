@@ -85,7 +85,8 @@ export class AddQuestionComponent implements OnInit {
         }
         
       )
-      this.router.navigate(['/view-question/']);
+      this.addQuestioForm.reset();
+      this.router.navigate(['view-question']);
 
         
 

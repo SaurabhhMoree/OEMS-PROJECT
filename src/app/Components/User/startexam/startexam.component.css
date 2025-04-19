@@ -1,1 +1,65 @@
- 
+.result-card {
+    background-color: rgb(192, 182, 182);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-header {
+    background-color: #343a40;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .result-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .result-content {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .result-detail {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #212529;
+  }
+  
+  .result-value {
+    color: #00796b;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  
+  .result-summary {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .result-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .action-btn {
+    font-size: 1.1rem;
+    padding: 10px 24px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
